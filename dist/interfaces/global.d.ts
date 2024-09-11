@@ -1,5 +1,5 @@
 import { TObject } from "../types";
-interface Timestamp {
+interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
 }
@@ -13,8 +13,8 @@ export interface NxUser {
     roles?: string[];
     site?: string;
     sites?: string[];
-    created?: Timestamp;
-    updated?: Timestamp;
+    created?: firebase_timestamp;
+    updated?: firebase_timestamp;
 }
 export interface Installer {
     id?: string;
@@ -25,8 +25,8 @@ export interface Installer {
     customers?: string[];
 }
 export interface Client {
-    created?: Timestamp;
-    updated?: Timestamp;
+    created?: firebase_timestamp;
+    updated?: firebase_timestamp;
     features?: string[];
     id?: string;
     name?: string;
@@ -45,12 +45,12 @@ export interface Peripheral {
     relayType: null;
     status: number;
     technician: string;
-    updateDate: Timestamp;
+    updateDate: firebase_timestamp;
 }
 export interface Car {
     confirmation_code: string;
     id?: string;
-    install_confirmation_date: Timestamp;
+    install_confirmation_date: firebase_timestamp;
     carId: string;
     mainDriver: string;
     installation_status: string;
@@ -58,7 +58,7 @@ export interface Car {
     userPhone: string;
     camera_installation_details: TObject<string>;
     status: number;
-    warrantyExpire: Timestamp;
+    warrantyExpire: firebase_timestamp;
     protectionType: string;
     protectionTypeId: string;
     warranty: boolean;
@@ -66,7 +66,7 @@ export interface Car {
     isEnforcementCenterUser: boolean;
     sites: string[];
     client: string;
-    installationDate: Timestamp;
+    installationDate: firebase_timestamp;
     timestamp: number;
     customer: string;
     customerId: string;
