@@ -1,5 +1,5 @@
 import { TObject } from "../types";
-interface firebase_timestamp {
+export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
 }
@@ -83,4 +83,3 @@ export interface Car {
     subEnforcmentUser: TObject<string | null | null[]>;
     peripherals: Peripheral[];
 }
-export {};

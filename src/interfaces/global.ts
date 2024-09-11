@@ -1,6 +1,6 @@
 import { TObject } from "../types";
 
-interface firebase_timestamp {
+export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
 }
