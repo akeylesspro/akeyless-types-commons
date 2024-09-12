@@ -89,4 +89,3 @@ export interface Car {
     subEnforcmentUser: TObject<string | null | null[]>;
     peripherals: Peripheral[];
 }
-
