@@ -89,3 +89,17 @@ export interface Car {
     subEnforcmentUser: TObject<string | null | null[]>;
     peripherals: Peripheral[];
 }
+
+export interface LastLocationCar {
+    car_number: string;
+    client?: string;
+    ign?: number;
+    latitude: number;
+    longitude: number;
+    prev_latitude?: number;
+    prev_longitude?: number;
+    sites?: string[];
+    source?: string;
+    spd?: number;
+    timestamp: firebase_timestamp;
+}
