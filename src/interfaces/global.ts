@@ -46,6 +46,7 @@ export interface Board {
     sim: string;
     status: BoardStatus;
     type: string;
+    token?: string;
 }
 export interface Peripheral {
     boardRef: string;
