@@ -42,6 +42,7 @@ export interface Client {
 }
 
 export interface Board {
+    id: string;
     imei: string;
     sim: string;
     status: BoardStatus;
