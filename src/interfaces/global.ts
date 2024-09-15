@@ -47,6 +47,8 @@ export interface Board {
     status: BoardStatus;
     type: string;
     token?: string;
+    uploaded: firebase_timestamp;
+    userId: string;
 }
 export interface Peripheral {
     boardRef: string;
