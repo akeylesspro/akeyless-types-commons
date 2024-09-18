@@ -1,3 +1,4 @@
+import { BoardStatus, UnitStatus } from "../enums";
 import { TObject } from "../types";
 
 export interface firebase_timestamp {
@@ -40,6 +41,16 @@ export interface Client {
     key?: string;
 }
 
+export interface Board {
+    id: string;
+    imei: string;
+    sim: string;
+    status: BoardStatus;
+    type: string;
+    token?: string;
+    uploaded: firebase_timestamp;
+    userId: string;
+}
 export interface Peripheral {
     boardRef: string;
     boardType: string;
@@ -63,7 +74,7 @@ export interface Car {
     name: string;
     userPhone: string;
     camera_installation_details: TObject<string>;
-    status: number;
+    status: UnitStatus;
     warrantyExpire: firebase_timestamp;
     protectionType: string;
     protectionTypeId: string;
