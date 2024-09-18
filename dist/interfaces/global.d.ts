@@ -37,10 +37,14 @@ export interface Client {
     key?: string;
 }
 export interface Board {
+    id: string;
     imei: string;
     sim: string;
     status: BoardStatus;
     type: string;
+    token?: string;
+    uploaded: firebase_timestamp;
+    userId: string;
 }
 export interface Peripheral {
     boardRef: string;
