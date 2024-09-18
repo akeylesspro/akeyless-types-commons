@@ -110,4 +110,5 @@ export interface CanbusParameter {
     desc?: string | null;
     id: number | string;
     value: number | string;
+    
 }
