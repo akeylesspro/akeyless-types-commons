@@ -85,14 +85,16 @@ export interface Car {
 }
 export interface LastLocationCar {
     car_number: string;
-    client?: string;
-    ign?: number;
     latitude: number;
     longitude: number;
+    timestamp: firebase_timestamp;
+    client?: string;
     prev_latitude?: number;
     prev_longitude?: number;
     sites?: string[];
     source?: string;
     spd?: number;
-    timestamp: firebase_timestamp;
+    vin?: number;
+    odo?: number;
+    ign?: number;
 }
