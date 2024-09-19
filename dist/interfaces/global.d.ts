@@ -112,5 +112,5 @@ export interface LastLocationCar {
 export interface CanbusParameter {
     desc?: string | null;
     id: number | string;
-    value: number | string;
+    value: number;
 }
