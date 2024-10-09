@@ -1,6 +1,7 @@
 import { BoardStatus, UnitStatus } from "../enums";
-import { TObject } from "../types";
+import { Timestamp } from "firebase-admin/firestore";
 
+import { TObject } from "../types";
 export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
@@ -30,8 +31,8 @@ export interface Installer {
 }
 
 export interface Client {
-    created?: firebase_timestamp;
-    updated?: firebase_timestamp;
+    created?: firebase_timestamp | Timestamp;
+    updated?: firebase_timestamp | Timestamp;
     features?: string[];
     id?: string;
     name?: string;
@@ -48,7 +49,7 @@ export interface Board {
     status: BoardStatus;
     type: string;
     token?: string;
-    uploaded: firebase_timestamp;
+    uploaded: firebase_timestamp | Timestamp;
     userId: string;
 }
 export interface Peripheral {
@@ -61,13 +62,13 @@ export interface Peripheral {
     relayType: null;
     status: number;
     technician: string;
-    updateDate: firebase_timestamp;
+    updateDate: firebase_timestamp | Timestamp;
 }
 
 export interface Car {
     confirmation_code: string;
     id?: string;
-    install_confirmation_date: firebase_timestamp;
+    install_confirmation_date: firebase_timestamp | Timestamp;
     carId: string;
     mainDriver: string;
     installation_status: string;
@@ -75,7 +76,7 @@ export interface Car {
     userPhone: string;
     camera_installation_details: TObject<string>;
     status: UnitStatus;
-    warrantyExpire: firebase_timestamp;
+    warrantyExpire: firebase_timestamp | Timestamp;
     protectionType: string;
     protectionTypeId: string;
     warranty: boolean;
@@ -83,7 +84,7 @@ export interface Car {
     isEnforcementCenterUser: boolean;
     sites: string[];
     client: string;
-    installationDate: firebase_timestamp;
+    installationDate: firebase_timestamp | Timestamp;
     timestamp: number;
     customer: string;
     customerId: string;
@@ -105,7 +106,7 @@ export interface LastLocationCar {
     car_number: string;
     latitude: number;
     longitude: number;
-    timestamp: firebase_timestamp;
+    timestamp: firebase_timestamp | Timestamp;
     client?: string;
     prev_latitude?: number;
     prev_longitude?: number;
