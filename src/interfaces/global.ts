@@ -100,6 +100,7 @@ export interface Car {
     chassisNumber: string;
     subEnforcmentUser: TObject<string | null | null[]>;
     peripherals: Peripheral[];
+    icon?: string;
 }
 
 export interface LastLocationCar {

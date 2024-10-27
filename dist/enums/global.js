@@ -11,6 +11,7 @@ var BoardStatus;
     BoardStatus[BoardStatus["ReadyForInstallation"] = 1] = "ReadyForInstallation";
     BoardStatus[BoardStatus["Installed"] = 2] = "Installed";
     BoardStatus[BoardStatus["Malfunction"] = 3] = "Malfunction";
+    BoardStatus[BoardStatus["NoSim"] = 4] = "NoSim";
 })(BoardStatus || (exports.BoardStatus = BoardStatus = {}));
 var UnitStatus;
 (function (UnitStatus) {

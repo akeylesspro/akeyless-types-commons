@@ -5,7 +5,8 @@ export declare enum DefaultClient {
 export declare enum BoardStatus {
     ReadyForInstallation = 1,
     Installed = 2,
-    Malfunction = 3
+    Malfunction = 3,
+    NoSim = 4
 }
 export declare enum UnitStatus {
     NewOrder = 0,
