@@ -124,3 +124,22 @@ export interface CanbusParameter {
     id: number | string;
     value: number;
 }
+
+export interface EventFromDevice {
+    car_number: string;
+    source: string;
+    timestamp: firebase_timestamp | Timestamp;
+    spd: number;
+    vin: number;
+    latitude: number;
+    longitude: number;
+    event_name: string;
+}
+
+export interface EventFromDevice_Ruptela extends EventFromDevice {
+    charge_percents: number;
+}
+
+export interface EventFromDevice_Erm extends EventFromDevice {
+    disarm_code: string;
+}
