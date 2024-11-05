@@ -117,6 +117,7 @@ export interface CanbusParameter {
     value: number;
 }
 export interface EventFromDevice {
+    event_id: number;
     car_number: string;
     source: string;
     timestamp: firebase_timestamp | Timestamp;
