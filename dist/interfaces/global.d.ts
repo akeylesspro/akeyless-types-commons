@@ -133,3 +133,15 @@ export interface EventFromDevice_Ruptela extends EventFromDevice {
 export interface EventFromDevice_Erm extends EventFromDevice {
     disarm_code: string;
 }
+export interface ErmStates {
+    car_number: string;
+    ign?: number;
+    is_online?: number;
+    last_offline?: Date;
+    last_online?: Date;
+    server: string;
+    updated?: Date;
+    vin?: number;
+    is_awake?: number;
+    battery_disconnected?: number;
+}
