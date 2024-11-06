@@ -110,6 +110,7 @@ export interface LastLocationCar {
     vin?: number;
     odo?: number;
     ign?: number;
+    direction?: number;
 }
 export interface CanbusParameter {
     desc?: string | null;
