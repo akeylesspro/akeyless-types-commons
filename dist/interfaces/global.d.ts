@@ -95,6 +95,7 @@ export interface Car {
     subEnforcmentUser: TObject<string | null | null[]>;
     peripherals: Peripheral[];
     icon?: string;
+    vin?: string;
 }
 export interface LastLocationCar {
     car_number: string;
