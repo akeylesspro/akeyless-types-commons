@@ -43,9 +43,10 @@ export interface Board {
     sim: string;
     status: BoardStatus;
     type: string;
-    token?: string;
     uploaded: firebase_timestamp | Timestamp;
     userId: string;
+    token?: string;
+    comments?: string;
 }
 export interface Peripheral {
     boardRef: string;
