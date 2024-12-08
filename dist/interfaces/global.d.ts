@@ -95,6 +95,7 @@ export interface Car {
     subEnforcmentUser: TObject<string | null | null[]>;
     peripherals: Peripheral[];
     icon?: string;
+    vin?: string;
 }
 export interface LastLocationCar {
     car_number: string;
@@ -110,9 +111,39 @@ export interface LastLocationCar {
     vin?: number;
     odo?: number;
     ign?: number;
+    direction?: number;
 }
 export interface CanbusParameter {
     desc?: string | null;
     id: number | string;
     value: number;
+}
+export interface EventFromDevice {
+    event_id: number;
+    car_number: string;
+    source: string;
+    timestamp: firebase_timestamp | Timestamp;
+    spd: number;
+    vin: number;
+    latitude: number;
+    longitude: number;
+    event_name: string;
+}
+export interface EventFromDevice_Ruptela extends EventFromDevice {
+    charge_percents: number;
+}
+export interface EventFromDevice_Erm extends EventFromDevice {
+    disarm_code: string;
+}
+export interface ErmStates {
+    car_number: string;
+    ign?: number;
+    is_online?: number;
+    last_offline?: Date;
+    last_online?: Date;
+    server: string;
+    updated?: Date;
+    vin?: number;
+    is_awake?: number;
+    battery_disconnected?: number;
 }
