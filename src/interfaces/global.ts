@@ -51,7 +51,7 @@ export interface Board {
     uploaded: firebase_timestamp | Timestamp;
     userId: string;
     token?: string;
-    comments?:string
+    comments?: string;
 }
 export interface Peripheral {
     boardRef: string;
@@ -75,6 +75,7 @@ export interface Car {
     installation_status: string;
     name: string;
     userPhone: string;
+    userEmail?: string;
     camera_installation_details: TObject<string>;
     status: UnitStatus;
     warrantyExpire: firebase_timestamp | Timestamp;
@@ -160,3 +161,4 @@ export interface ErmStates {
     is_awake?: number;
     battery_disconnected?: number;
 }
+

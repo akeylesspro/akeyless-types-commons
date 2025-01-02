@@ -69,6 +69,7 @@ export interface Car {
     installation_status: string;
     name: string;
     userPhone: string;
+    userEmail?: string;
     camera_installation_details: TObject<string>;
     status: UnitStatus;
     warrantyExpire: firebase_timestamp | Timestamp;
