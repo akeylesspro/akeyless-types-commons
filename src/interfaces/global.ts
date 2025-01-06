@@ -29,7 +29,7 @@ export interface Installer {
     clients?: string[];
     customers?: string[];
 }
-
+export type ClientStatus = "active" | "suspended" | "deleted";
 export interface Client {
     created?: firebase_timestamp | Timestamp;
     updated?: firebase_timestamp | Timestamp;
@@ -37,7 +37,7 @@ export interface Client {
     id?: string;
     name?: string;
     root_site?: string;
-    status?: string;
+    status?: ClientStatus;
     api_token?: string;
     key?: string;
     installation_name?: string;
