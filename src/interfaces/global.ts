@@ -40,6 +40,8 @@ export interface Client {
     status?: string;
     api_token?: string;
     key?: string;
+    installation_name?: string;
+    installation_phone?: string;
 }
 
 export interface Board {
@@ -161,4 +163,3 @@ export interface ErmStates {
     is_awake?: number;
     battery_disconnected?: number;
 }
-

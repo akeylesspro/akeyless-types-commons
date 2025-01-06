@@ -36,6 +36,8 @@ export interface Client {
     status?: string;
     api_token?: string;
     key?: string;
+    installation_name?: string;
+    installation_phone?: string;
 }
 export interface Board {
     id: string;
