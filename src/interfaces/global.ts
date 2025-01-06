@@ -29,7 +29,11 @@ export interface Installer {
     clients?: string[];
     customers?: string[];
 }
-export type ClientStatus = "active" | "suspended" | "deleted";
+export enum ClientStatus {
+    Active = "active",
+    Suspended = "suspended",
+    Deleted = "deleted",
+}
 export interface Client {
     created?: firebase_timestamp | Timestamp;
     updated?: firebase_timestamp | Timestamp;
