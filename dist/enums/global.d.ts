@@ -21,7 +21,7 @@ export declare enum ClientStatus {
     Deleted = "deleted"
 }
 export declare enum LanguageOptions {
-    Eh = "eh",
+    He = "he",
     En = "en",
     Ru = "ru"
 }

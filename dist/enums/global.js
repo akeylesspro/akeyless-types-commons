@@ -29,7 +29,7 @@ var ClientStatus;
 })(ClientStatus || (exports.ClientStatus = ClientStatus = {}));
 var LanguageOptions;
 (function (LanguageOptions) {
-    LanguageOptions["Eh"] = "eh";
+    LanguageOptions["He"] = "he";
     LanguageOptions["En"] = "en";
     LanguageOptions["Ru"] = "ru";
 })(LanguageOptions || (exports.LanguageOptions = LanguageOptions = {}));
