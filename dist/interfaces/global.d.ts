@@ -1,4 +1,4 @@
-import { BoardStatus, UnitStatus } from "../enums";
+import { BoardStatus, ClientStatus, LanguageOptions, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
 import { TObject } from "../types";
 export interface firebase_timestamp {
@@ -26,11 +26,6 @@ export interface Installer {
     clients?: string[];
     customers?: string[];
 }
-export declare enum ClientStatus {
-    Active = "active",
-    Suspended = "suspended",
-    Deleted = "deleted"
-}
 export interface Client {
     created?: firebase_timestamp | Timestamp;
     updated?: firebase_timestamp | Timestamp;
@@ -41,6 +36,7 @@ export interface Client {
     status?: ClientStatus;
     api_token?: string;
     key?: string;
+    language?: LanguageOptions;
     installation_name?: string;
     installation_phone?: string;
 }
