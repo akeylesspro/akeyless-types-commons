@@ -43,6 +43,7 @@ export interface Client {
     language?: LanguageOptions;
     installation_name?: string;
     installation_phone?: string;
+    installation_root_site?: string;
 }
 
 export interface Board {
