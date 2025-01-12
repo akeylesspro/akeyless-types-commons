@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LanguageOptions = exports.ClientStatus = exports.UnitStatus = exports.BoardStatus = exports.DefaultClient = void 0;
+exports.CountryOptions = exports.LanguageOptions = exports.ClientStatus = exports.UnitStatus = exports.BoardStatus = exports.DefaultClient = void 0;
 var DefaultClient;
 (function (DefaultClient) {
     DefaultClient["default"] = "akeyless";
@@ -33,4 +33,9 @@ var LanguageOptions;
     LanguageOptions["En"] = "en";
     LanguageOptions["Ru"] = "ru";
 })(LanguageOptions || (exports.LanguageOptions = LanguageOptions = {}));
+var CountryOptions;
+(function (CountryOptions) {
+    CountryOptions["US"] = "us";
+    CountryOptions["IL"] = "il";
+})(CountryOptions || (exports.CountryOptions = CountryOptions = {}));
 //# sourceMappingURL=global.js.map

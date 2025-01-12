@@ -28,3 +28,7 @@ export enum LanguageOptions {
     En = "en",
     Ru = "ru",
 }
+export enum CountryOptions {
+    US = "us",
+    IL = "il",
+}
