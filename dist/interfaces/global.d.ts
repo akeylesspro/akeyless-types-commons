@@ -7,7 +7,7 @@ export interface firebase_timestamp {
 }
 export interface NxUser {
     id?: string;
-    client?: string;
+    clients?: string[];
     first_name?: string;
     last_name?: string;
     phone_number?: string;
