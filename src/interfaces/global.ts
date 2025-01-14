@@ -6,7 +6,10 @@ export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
 }
-
+export type DashboardRoles = "super_admin" | "client_admin" | "site_admin" | "capacity_admin" | "dashboard_user";
+export type ToolboxRoles = "toolbox";
+export type InstallerRoles = "installer" | "super_installer";
+export type NxUserRoles = DashboardRoles | ToolboxRoles | InstallerRoles;
 export interface NxUser {
     id?: string;
     clients?: string[];
@@ -14,7 +17,7 @@ export interface NxUser {
     last_name?: string;
     phone_number?: string;
     status?: string;
-    roles?: string[];
+    roles?: NxUserRoles[];
     site?: string;
     sites?: string[];
     created?: firebase_timestamp;
