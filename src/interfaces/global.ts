@@ -1,15 +1,34 @@
 import { BoardStatus, ClientStatus, LanguageOptions, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
-
 import { TObject } from "../types";
+
 export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
 }
-export type DashboardRoles = "super_admin" | "client_admin" | "site_admin" | "capacity_admin" | "dashboard_user";
-export type ToolboxRoles = "toolbox";
-export type InstallerRoles = "installer" | "super_installer";
-export type NxUserRoles = DashboardRoles | ToolboxRoles | InstallerRoles;
+
+export type DashboardFeatures = "super_admin" | "client_admin" | "site_admin" | "capacity_admin" | "dashboard_user";
+export type ReportsFeatures = "gprs_balance";
+export type InstallerFeatures = "super_installer" | "install" | "uninstall" | "maintenance" | "tests" | "tools";
+
+export type NxUserFeatures = DashboardFeatures | InstallerFeatures | ReportsFeatures;
+
+export type ClientFeatures =
+    | "PDI"
+    | "alert_management"
+    | "biometry"
+    | "cawamo"
+    | "charge_tracking"
+    | "contact_by_email"
+    | "cut_on_off"
+    | "doors_open_close"
+    | "keypad_code_change"
+    | "no_installation_sms_to_end_user"
+    | "polygon_scheduler"
+    | "servision"
+    | "vibration_level_control"
+    | "vibration_on_off";
+
 export interface NxUser {
     id?: string;
     clients?: string[];
@@ -17,7 +36,7 @@ export interface NxUser {
     last_name?: string;
     phone_number?: string;
     status?: string;
-    roles?: NxUserRoles[];
+    features?: NxUserFeatures[];
     site?: string;
     sites?: string[];
     created?: firebase_timestamp;
@@ -36,7 +55,7 @@ export interface Installer {
 export interface Client {
     created?: firebase_timestamp | Timestamp;
     updated?: firebase_timestamp | Timestamp;
-    features?: string[];
+    features?: ClientFeatures[];
     id?: string;
     name?: string;
     root_site?: string;
