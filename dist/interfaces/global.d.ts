@@ -8,7 +8,8 @@ export interface firebase_timestamp {
 export type DashboardFeatures = "super_admin" | "client_admin" | "site_admin" | "capacity_admin" | "dashboard_user";
 export type ReportsFeatures = "gprs_balance";
 export type InstallerFeatures = "super_installer" | "install" | "uninstall" | "maintenance" | "tests" | "tools";
-export type NxUserFeatures = DashboardFeatures | InstallerFeatures | ReportsFeatures;
+export type ContactFeatures = "contact_by_email" | "contact_by_phone";
+export type NxUserFeatures = DashboardFeatures | InstallerFeatures | ReportsFeatures | ContactFeatures;
 export interface NxUserPermeations extends Partial<Record<NxUserFeatures, Boolean>> {
 }
 export type ClientFeatures = "PDI" | "alert_management" | "biometry" | "cawamo" | "charge_tracking" | "contact_by_email" | "cut_on_off" | "doors_open_close" | "keypad_code_change" | "no_installation_sms_to_end_user" | "polygon_scheduler" | "servision" | "vibration_level_control" | "vibration_on_off";
