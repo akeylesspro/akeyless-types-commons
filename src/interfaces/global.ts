@@ -12,6 +12,7 @@ export type ReportsFeatures = "gprs_balance";
 export type InstallerFeatures = "super_installer" | "install" | "uninstall" | "maintenance" | "tests" | "tools";
 
 export type NxUserFeatures = DashboardFeatures | InstallerFeatures | ReportsFeatures;
+export interface NxUserPermeations extends Partial<Record<NxUserFeatures, Boolean>> {}
 
 export type ClientFeatures =
     | "PDI"
@@ -29,9 +30,7 @@ export type ClientFeatures =
     | "vibration_level_control"
     | "vibration_on_off";
 
-export interface NxUserPermeations extends Partial<Record<NxUserFeatures, Boolean>> {
-    
-}
+export interface ClientPermeations extends Partial<Record<ClientFeatures, Boolean>> {}
 
 export interface NxUser {
     id?: string;

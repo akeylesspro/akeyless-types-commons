@@ -9,8 +9,10 @@ export type DashboardFeatures = "super_admin" | "client_admin" | "site_admin" | 
 export type ReportsFeatures = "gprs_balance";
 export type InstallerFeatures = "super_installer" | "install" | "uninstall" | "maintenance" | "tests" | "tools";
 export type NxUserFeatures = DashboardFeatures | InstallerFeatures | ReportsFeatures;
-export type ClientFeatures = "PDI" | "alert_management" | "biometry" | "cawamo" | "charge_tracking" | "contact_by_email" | "cut_on_off" | "doors_open_close" | "keypad_code_change" | "no_installation_sms_to_end_user" | "polygon_scheduler" | "servision" | "vibration_level_control" | "vibration_on_off";
 export interface NxUserPermeations extends Partial<Record<NxUserFeatures, Boolean>> {
+}
+export type ClientFeatures = "PDI" | "alert_management" | "biometry" | "cawamo" | "charge_tracking" | "contact_by_email" | "cut_on_off" | "doors_open_close" | "keypad_code_change" | "no_installation_sms_to_end_user" | "polygon_scheduler" | "servision" | "vibration_level_control" | "vibration_on_off";
+export interface ClientPermeations extends Partial<Record<ClientFeatures, Boolean>> {
 }
 export interface NxUser {
     id?: string;
