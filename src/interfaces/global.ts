@@ -6,15 +6,14 @@ export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
 }
-
+//  user features
 export type DashboardFeatures = "super_admin" | "client_admin" | "site_admin" | "capacity_admin" | "dashboard_user";
 export type ReportsFeatures = "gprs_balance";
 export type InstallerFeatures = "super_installer" | "install" | "uninstall" | "maintenance" | "tests" | "tools";
 export type ContactFeatures = "contact_by_email" | "contact_by_phone";
-
 export type NxUserFeatures = DashboardFeatures | InstallerFeatures | ReportsFeatures | ContactFeatures;
 export interface NxUserPermeations extends Partial<Record<NxUserFeatures, Boolean>> {}
-
+// client features
 export type ClientFeatures =
     | "PDI"
     | "alert_management"
