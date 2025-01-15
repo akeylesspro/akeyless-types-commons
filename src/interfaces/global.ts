@@ -29,6 +29,10 @@ export type ClientFeatures =
     | "vibration_level_control"
     | "vibration_on_off";
 
+export interface NxUserPermeations extends Partial<Record<NxUserFeatures, Boolean>> {
+    
+}
+
 export interface NxUser {
     id?: string;
     clients?: string[];
