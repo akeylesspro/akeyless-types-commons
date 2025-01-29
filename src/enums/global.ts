@@ -17,3 +17,18 @@ export enum UnitStatus {
     InstalledButNotActive = 3,
     NewInstallation = 4,
 }
+
+export enum ClientStatus {
+    Active = "active",
+    Suspended = "suspended",
+    Deleted = "deleted",
+}
+export enum LanguageOptions {
+    He = "he",
+    En = "en",
+    Ru = "ru",
+}
+export enum CountryOptions {
+    US = "us",
+    IL = "il",
+}

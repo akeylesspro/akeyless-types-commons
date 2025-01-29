@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnitStatus = exports.BoardStatus = exports.DefaultClient = void 0;
+exports.CountryOptions = exports.LanguageOptions = exports.ClientStatus = exports.UnitStatus = exports.BoardStatus = exports.DefaultClient = void 0;
 var DefaultClient;
 (function (DefaultClient) {
     DefaultClient["default"] = "akeyless";
@@ -21,4 +21,21 @@ var UnitStatus;
     UnitStatus[UnitStatus["InstalledButNotActive"] = 3] = "InstalledButNotActive";
     UnitStatus[UnitStatus["NewInstallation"] = 4] = "NewInstallation";
 })(UnitStatus || (exports.UnitStatus = UnitStatus = {}));
+var ClientStatus;
+(function (ClientStatus) {
+    ClientStatus["Active"] = "active";
+    ClientStatus["Suspended"] = "suspended";
+    ClientStatus["Deleted"] = "deleted";
+})(ClientStatus || (exports.ClientStatus = ClientStatus = {}));
+var LanguageOptions;
+(function (LanguageOptions) {
+    LanguageOptions["He"] = "he";
+    LanguageOptions["En"] = "en";
+    LanguageOptions["Ru"] = "ru";
+})(LanguageOptions || (exports.LanguageOptions = LanguageOptions = {}));
+var CountryOptions;
+(function (CountryOptions) {
+    CountryOptions["US"] = "us";
+    CountryOptions["IL"] = "il";
+})(CountryOptions || (exports.CountryOptions = CountryOptions = {}));
 //# sourceMappingURL=global.js.map

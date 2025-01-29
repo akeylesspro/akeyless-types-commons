@@ -1,7 +1,7 @@
-import { BoardStatus, UnitStatus } from "../enums";
+import { BoardStatus, ClientStatus, LanguageOptions, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
-
 import { TObject } from "../types";
+
 export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
@@ -9,12 +9,12 @@ export interface firebase_timestamp {
 
 export interface NxUser {
     id?: string;
-    client?: string;
+    clients?: string[];
     first_name?: string;
     last_name?: string;
     phone_number?: string;
     status?: string;
-    roles?: string[];
+    features?: string[];
     site?: string;
     sites?: string[];
     created?: firebase_timestamp;
@@ -37,9 +37,13 @@ export interface Client {
     id?: string;
     name?: string;
     root_site?: string;
-    status?: string;
+    status?: ClientStatus;
     api_token?: string;
     key?: string;
+    language?: LanguageOptions;
+    installation_name?: string;
+    installation_phone?: string;
+    installation_root_site?: string;
 }
 
 export interface Board {
@@ -48,9 +52,10 @@ export interface Board {
     sim: string;
     status: BoardStatus;
     type: string;
-    token?: string;
     uploaded: firebase_timestamp | Timestamp;
     userId: string;
+    token?: string;
+    comments?: string;
 }
 export interface Peripheral {
     boardRef: string;
@@ -74,6 +79,7 @@ export interface Car {
     installation_status: string;
     name: string;
     userPhone: string;
+    userEmail?: string;
     camera_installation_details: TObject<string>;
     status: UnitStatus;
     warrantyExpire: firebase_timestamp | Timestamp;

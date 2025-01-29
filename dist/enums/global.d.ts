@@ -15,3 +15,17 @@ export declare enum UnitStatus {
     InstalledButNotActive = 3,
     NewInstallation = 4
 }
+export declare enum ClientStatus {
+    Active = "active",
+    Suspended = "suspended",
+    Deleted = "deleted"
+}
+export declare enum LanguageOptions {
+    He = "he",
+    En = "en",
+    Ru = "ru"
+}
+export declare enum CountryOptions {
+    US = "us",
+    IL = "il"
+}
