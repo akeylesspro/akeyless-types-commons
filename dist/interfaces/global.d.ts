@@ -147,3 +147,14 @@ export interface ErmStates {
     is_awake?: number;
     battery_disconnected?: number;
 }
+export type ReportMetaDataType = "string" | "car_number" | "phone" | "date" | "time" | "datetime" | "number" | "email" | "boolean" | "geo";
+export interface ReportMetaHeader {
+    name: string;
+    type: ReportMetaDataType;
+    class_name?: string;
+    style?: string;
+}
+export interface ReportMeta {
+    headers: ReportMetaHeader[];
+}
+export type ReportDataRow = (string | number | Date | boolean)[];
