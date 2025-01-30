@@ -179,4 +179,4 @@ export interface ReportMeta {
     headers: ReportMetaHeader[];
 }
 
-export type ReportDataRow = (string | number | Date | boolean | null | undefined)[];
+export type ReportDataRow = (string | number | Date | boolean | null)[];
