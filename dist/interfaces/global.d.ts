@@ -17,6 +17,7 @@ export interface NxUser {
     sites?: string[];
     created?: firebase_timestamp;
     updated?: firebase_timestamp;
+    last_login?: firebase_timestamp;
 }
 export interface Installer {
     id?: string;
