@@ -1,6 +1,6 @@
 {
     "name": "akeyless-types-commons",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "scripts": {
@@ -14,6 +14,9 @@
         "@types/node": "^22.5.2",
         "typescript": "^5.5.4"
     },
+    "files": [
+        "dist"
+    ],
     "dependencies": {
         "firebase-admin": "^12.6.0"
     }
