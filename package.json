@@ -5,7 +5,7 @@
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "tsc && node ./dist/",
-        "deploy": "tsc && git add . && git commit -am '.' && git push"
+        "deploy": "npm run build && npm version patch --no-git-tag-version && npm publish"
     },
     "author": "",
     "license": "ISC",
