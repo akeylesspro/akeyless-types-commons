@@ -1,11 +1,11 @@
 {
     "name": "akeyless-types-commons",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "scripts": {
         "build": "tsc && node ./dist/",
-        "deploy": "tsc && git add . && git commit -am '.' && git push"
+        "deploy": "npm run build && npm version patch --no-git-tag-version && npm publish"
     },
     "author": "",
     "license": "ISC",
@@ -14,6 +14,9 @@
         "@types/node": "^22.5.2",
         "typescript": "^5.5.4"
     },
+    "files": [
+        "dist"
+    ],
     "dependencies": {
         "firebase-admin": "^12.6.0"
     }
