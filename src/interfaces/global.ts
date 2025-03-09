@@ -167,7 +167,18 @@ export interface ErmStates {
     battery_disconnected?: number;
 }
 
-export type ReportMetaDataType = "string" | "car_number" | "phone" | "date" | "time" | "datetime" | "number" | "email" | "boolean" | "geo";
+export type ReportMetaDataType =
+    | "string"
+    | "car_number"
+    | "phone"
+    | "date"
+    | "time"
+    | "datetime"
+    | "number"
+    | "email"
+    | "boolean"
+    | "geo"
+    | "duration";
 
 export interface ReportMetaHeader {
     name: string;
