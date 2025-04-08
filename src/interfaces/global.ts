@@ -13,6 +13,7 @@ export interface NxUser {
     first_name?: string;
     last_name?: string;
     phone_number?: string;
+    email?: string;
     status?: string;
     features?: string[];
     site?: string;
@@ -126,6 +127,22 @@ export interface LastLocationCar {
     odo?: number;
     ign?: number;
     direction?: number;
+}
+
+export interface CarState {
+    car_number?: string;
+    client?: string;
+    engine?: number;
+    engine_updated?: firebase_timestamp | Timestamp;
+    ign?: number;
+    is_online?: number;
+    last_offline?: firebase_timestamp | Timestamp;
+    last_online?: firebase_timestamp | Timestamp;
+    server?: string;
+    sites?: string[];
+    update?: firebase_timestamp | Timestamp;
+    updated?: firebase_timestamp | Timestamp;
+    vin?: number;
 }
 
 export interface CanbusParameter {
