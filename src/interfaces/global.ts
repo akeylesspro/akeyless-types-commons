@@ -8,6 +8,7 @@ export interface firebase_timestamp {
 }
 
 export interface Site {
+    id?: string;
     address: string;
     cars: string[];
     client: string;
