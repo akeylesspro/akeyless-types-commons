@@ -1,10 +1,30 @@
-import { BoardStatus, ClientStatus, LanguageOptions, UnitStatus } from "../enums";
+import { BoardStatus, ClientStatus, LanguageOptions, SiteType, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
-import { TObject } from "../types";
+import { Geo, TObject } from "../types";
 
 export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
+}
+
+export interface Site {
+    address: string;
+    cars: string[];
+    client: string;
+    code?: string;
+    color: string;
+    email: string;
+    father?: string;
+    is_read_only?: boolean;
+    location: Geo;
+    name: string;
+    phone: string;
+    polygons: string[];
+    sites: string[];
+    type: SiteType;
+    users?: string[];
+    created?: firebase_timestamp;
+    updated?: firebase_timestamp;
 }
 
 export interface NxUser {

@@ -32,3 +32,12 @@ export enum CountryOptions {
     US = "us",
     IL = "il",
 }
+
+export enum SiteType {
+    root = "root",
+    region = "region",
+    office = "office",
+    mobile_app_user = "mobile_app_user",
+    installation_site_root = "installation_site_root",
+    installation_site = "installation_site",
+}
