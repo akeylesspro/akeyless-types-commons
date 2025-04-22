@@ -37,11 +37,6 @@ export enum FeaturesInstaller {
     tools = "tools",
 }
 
-export enum FeaturesReports {
-    gprs_balances = "gprs_balances",
-    online_vehicles = "online_vehicles",
-}
-
 export enum FeaturesToolbox {
     super_admin = "super_admin",
     toolbox_user = "toolbox_user",
