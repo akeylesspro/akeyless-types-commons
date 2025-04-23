@@ -143,6 +143,17 @@ export interface CarState {
     update?: firebase_timestamp | Timestamp;
     updated?: firebase_timestamp | Timestamp;
     vin?: number;
+    disarmed?: number;
+    disarm_code?: string;
+    evacuator?: number;
+    is_ce?: number;
+    is_ab?: number;
+    is_abs?: number;
+    is_tpms?: number;
+    battery_disconnected?: number;
+    charge_percents?: number;
+    is_charging?: number;
+    cut?: number;
 }
 
 export interface CanbusParameter {
