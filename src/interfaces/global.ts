@@ -131,6 +131,7 @@ export interface Car {
     peripherals: Peripheral[];
     icon?: string;
     vin?: string;
+    features?: string[];
 }
 
 export interface LastLocationCar {
