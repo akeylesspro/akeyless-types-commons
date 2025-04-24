@@ -127,11 +127,12 @@ export interface Car {
     color: string;
     commandOption: string;
     chassisNumber: string;
-    subEnforcmentUser: TObject<string | null | null[]>;
+    subEnforcmentUser: TObject<string | any[] | null>;
     peripherals: Peripheral[];
     icon?: string;
     vin?: string;
     features?: string[];
+    deactivated?: boolean;
 }
 
 export interface LastLocationCar {
