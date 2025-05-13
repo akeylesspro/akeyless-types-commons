@@ -133,6 +133,8 @@ export interface Car {
     vin?: string;
     features?: string[];
     deactivated?: boolean;
+    internal_comments?: string;
+    comments?: string;
 }
 
 export interface LastLocationCar {

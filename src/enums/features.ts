@@ -37,15 +37,25 @@ export enum FeaturesInstaller {
     tools = "tools",
 }
 
-export enum FeaturesToolbox {
+export declare enum FeaturesToolbox {
     super_admin = "super_admin",
     toolbox_user = "toolbox_user",
     car_catalog = "car_catalog",
     sms_configurations = "sms_configurations",
     tools = "tools",
     equipment_options = "equipment_options",
+    manage_equipment = "manage_equipment",
     manage_boards = "manage_boards",
     manage_clients = "manage_clients",
     manage_users = "manage_users",
     manage_cars = "manage_cars",
 }
+
+export interface UserPermissionsObject {
+    toolbox?: Record<`${FeaturesToolbox}`, boolean>;
+    installer?: Record<`${FeaturesInstaller}`, boolean>;
+    dashboard?: Record<`${FeaturesDashboard}`, boolean>;
+    reports?: Record<string, boolean>;
+}
+
+export type userPermissionsObjectValue<T extends keyof UserPermissionsObject> = keyof UserPermissionsObject[T];
