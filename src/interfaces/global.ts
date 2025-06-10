@@ -1,6 +1,7 @@
 import { BoardStatus, ClientStatus, LanguageOptions, SiteType, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
 import { Geo, TObject } from "../types";
+import { Interface } from "readline";
 
 export interface firebase_timestamp {
     _nanoseconds: number;
@@ -44,7 +45,7 @@ export interface NxUser {
     last_login?: firebase_timestamp;
 }
 
-export interface MobileAppUser extends GoUser {
+export interface MobileAppUser {
     id: string;
     uid: string;
     app_version: string;
@@ -64,14 +65,13 @@ export interface MobileAppUser extends GoUser {
     validation_token?: string;
     disabled_events?: Record<string, Record<string, number[]>>;
 }
-export type GoUser = {
-    is_installer: boolean;
+
+export type GoUser<T extends NxUser | MobileAppUser> = T & {
     clients: Pick<Client, "features" | "id" | "name">[];
-    features?: string[];
+    features: string[];
     first_name: string;
     last_name: string;
 };
-
 export interface Installer {
     id?: string;
     fullName?: string;
