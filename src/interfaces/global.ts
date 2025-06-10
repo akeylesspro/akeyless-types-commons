@@ -64,7 +64,13 @@ export interface MobileAppUser extends GoUser {
     validation_token?: string;
     disabled_events?: Record<string, Record<string, number[]>>;
 }
-export type GoUser = { is_installer: boolean; clients: Pick<Client, "features" | "id" | "name">[]; features?: string[] };
+export type GoUser = {
+    is_installer: boolean;
+    clients: Pick<Client, "features" | "id" | "name">[];
+    features?: string[];
+    first_name: string;
+    last_name: string;
+};
 
 export interface Installer {
     id?: string;
