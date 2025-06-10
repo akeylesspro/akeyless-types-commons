@@ -44,6 +44,28 @@ export interface NxUser {
     last_login?: firebase_timestamp;
 }
 
+export interface MobileAppUser extends GoUser {
+    id: string;
+    uid: string;
+    app_version: string;
+    created: firebase_timestamp;
+    fcm_token: string;
+    language: "en" | "ru" | "heb";
+    method: "sms" | "email";
+    os: "android" | "ios";
+    is_agreement_signed?: boolean;
+    agreement_signed_datetime?: firebase_timestamp;
+    long_phone_number: string;
+    email: string;
+    short_phone_number: string;
+    password?: string;
+    success?: boolean;
+    validation_code?: string;
+    validation_token?: string;
+    disabled_events?: Record<string, Record<string, number[]>>;
+}
+export type GoUser = { is_installer: boolean; clients: Pick<Client, "features" | "id" | "name">[]; features?: string[] };
+
 export interface Installer {
     id?: string;
     fullName?: string;
@@ -185,6 +207,7 @@ export interface CanbusParameter {
     desc?: string | null;
     id: number | string;
     value: number;
+    timestamp?: firebase_timestamp | Timestamp;
 }
 
 export interface EventFromDevice {
