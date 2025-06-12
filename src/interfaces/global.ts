@@ -56,22 +56,25 @@ export interface MobileAppUser {
     os: "android" | "ios";
     is_agreement_signed?: boolean;
     agreement_signed_datetime?: firebase_timestamp;
-    long_phone_number: string;
-    email: string;
-    short_phone_number: string;
+    long_phone_number?: string;
+    email?: string;
+    short_phone_number?: string;
     password?: string;
     success?: boolean;
     validation_code?: string;
     validation_token?: string;
     disabled_events?: Record<string, Record<string, number[]>>;
+    features?: string[];
+    first_name?: string;
+    last_name?: string;
 }
 
-export type GoUser<T extends NxUser | MobileAppUser> = T & {
+export interface GoUser {
     clients: Pick<Client, "features" | "id" | "name">[];
     features: string[];
     first_name: string;
     last_name: string;
-};
+}
 export interface Installer {
     id?: string;
     fullName?: string;
@@ -109,16 +112,20 @@ export interface Board {
     comments?: string;
 }
 export interface Peripheral {
-    boardRef: string;
-    boardType: string;
-    boardTypeId: string;
-    installationLocationImageUrl: string;
-    location: string;
-    mac: string;
-    relayType: null;
-    status: number;
-    technician: string;
-    updateDate: firebase_timestamp | Timestamp;
+    boardRef?: string;
+    boardType?: string;
+    boardTypeId?: string;
+    installationLocationImageUrl?: string;
+    location?: string;
+    mac?: string;
+    relayType?: null;
+    status?: number;
+    technician?: string;
+    updateDate?: firebase_timestamp | Timestamp;
+    serialNumber?: string;
+    equipmentOptionId?: string;
+    equipmentOptionName?: string;
+    type?: string;
 }
 
 export interface Car {
@@ -163,6 +170,7 @@ export interface Car {
     deactivated?: boolean;
     internal_comments?: string;
     comments?: string;
+    link_token?: string;
 }
 
 export interface LastLocationCar {
