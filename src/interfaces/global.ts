@@ -171,7 +171,7 @@ export interface Car {
     internal_comments?: string;
     comments?: string;
     link_token?: string;
-    maker_icon_url?: string;
+    maker_icon?: string;
 }
 
 export interface LastLocationCar {
