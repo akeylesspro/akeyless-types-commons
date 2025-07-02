@@ -9,6 +9,11 @@ export enum BoardStatus {
     Malfunction = 3,
     NoSim = 4,
 }
+export enum EquipmentStatus {
+    Ready = "ready",
+    Installed = "in_use",
+    Malfunction = "malfunction",
+}
 
 export enum UnitStatus {
     NewOrder = 0,
