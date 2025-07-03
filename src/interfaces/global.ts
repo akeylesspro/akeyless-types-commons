@@ -1,4 +1,4 @@
-import { BoardStatus, ClientStatus, LanguageOptions, SiteType, UnitStatus } from "../enums";
+import { BoardStatus, ClientStatus, EquipmentStatus, EquipmentStatusReason, LanguageOptions, SiteType, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
 import { Geo, TObject } from "../types";
 import { Interface } from "readline";
@@ -74,14 +74,6 @@ export interface GoUser {
     features: string[];
     first_name: string;
     last_name: string;
-}
-export interface Installer {
-    id?: string;
-    fullName?: string;
-    phone?: string;
-    superTechnician?: string;
-    clients?: string[];
-    customers?: string[];
 }
 
 export interface Client {
@@ -225,6 +217,38 @@ export interface CanbusParameter {
     timestamp?: firebase_timestamp | Timestamp;
 }
 
+export interface Equipment {
+    id: string;
+    serial_number: string;
+    equipment_option: string;
+    equipment_option_id: string;
+    status: EquipmentStatus;
+    status_reason: EquipmentStatusReason;
+    meta: {
+        version: {
+            hw: string;
+            sw: string;
+        };
+        attributes?: string;
+        [key: string]: any;
+    };
+    comments: string;
+    created: firebase_timestamp;
+    updated: firebase_timestamp;
+    updated_by: string;
+    created_by?: string;
+}
+
+export interface EquipmentOption {
+    id: string;
+    name: string;
+    equipment_category: string;
+    description: string;
+    created: firebase_timestamp;
+    updated: firebase_timestamp;
+    updated_by: string;
+    created_by?: string;
+}
 export interface EventFromDevice {
     event_id: number;
     car_number: string;

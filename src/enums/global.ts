@@ -11,8 +11,16 @@ export enum BoardStatus {
 }
 export enum EquipmentStatus {
     Ready = "ready",
-    Installed = "in_use",
+    InUse = "in_use",
     Malfunction = "malfunction",
+}
+export enum EquipmentStatusReason {
+    Kit = "kit",
+    Installed = "installed",
+    Broken = "broken",
+    Lost = "lost",
+    Defect = "defect",
+    New = "new",
 }
 
 export enum UnitStatus {
