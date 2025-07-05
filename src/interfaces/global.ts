@@ -295,6 +295,8 @@ export type ReportMetaDataType =
     | "geo"
     | "duration";
 
+export type ReportParameterDataType = ReportMetaDataType | "select" | "multi_select";
+
 export interface ReportMetaHeader {
     name: string;
     type: ReportMetaDataType;
