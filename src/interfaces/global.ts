@@ -166,6 +166,13 @@ export interface Car {
     maker_icon?: string;
 }
 
+export interface UsersUnits {
+    id?: string;
+    carId: string;
+    phone: string;
+    role: "admin" | "user" | "installer" | "guest";
+}
+
 export interface LastLocationCar {
     car_number: string;
     latitude: number;
