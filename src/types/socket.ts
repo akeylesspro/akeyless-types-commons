@@ -8,16 +8,11 @@ export const SOCKET_EVENTS = {
     UNSUBSCRIBE_COLLECTIONS: "unsubscribe_collections",
     CLEAR_ALL_REDIS_DATA: "clear_all_redis_data",
     DISCONNECT: "disconnect",
+    SESSION: "session",
 } as const;
 
 export type SocketEventMap = {
-    [SOCKET_EVENTS.SET_DATA]: any;
-    [SOCKET_EVENTS.GET_DATA]: any;
-    [SOCKET_EVENTS.DELETE_DATA]: any;
-    [SOCKET_EVENTS.SUBSCRIBE_COLLECTIONS]: any;
-    [SOCKET_EVENTS.UNSUBSCRIBE_COLLECTIONS]: any;
-    [SOCKET_EVENTS.CLEAR_ALL_REDIS_DATA]: any;
-    [SOCKET_EVENTS.DISCONNECT]: any;
+    [K in (typeof SOCKET_EVENTS)[keyof typeof SOCKET_EVENTS]]: any;
 };
 
 export type RedisUpdateType = "update" | "add" | "delete";
