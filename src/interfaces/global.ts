@@ -67,6 +67,7 @@ export interface MobileAppUser {
     features?: string[];
     first_name?: string;
     last_name?: string;
+    app?: string;
 }
 
 export interface GoUser {
