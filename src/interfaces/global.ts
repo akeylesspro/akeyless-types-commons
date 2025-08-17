@@ -130,6 +130,11 @@ export interface Car {
     name: string;
     userPhone: string;
     userEmail?: string;
+    userAddress?: string;
+    userIdCard?: string;
+    userResidence?: string;
+    parking_place?: string;
+    vehicle_markers?: string;
     camera_installation_details: TObject<string>;
     status: UnitStatus;
     warrantyExpire: firebase_timestamp | Timestamp;
