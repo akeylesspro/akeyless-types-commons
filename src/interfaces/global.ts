@@ -87,6 +87,7 @@ export interface Client {
     status?: ClientStatus;
     api_token?: string;
     key?: string;
+    email?: string;
     language?: LanguageOptions;
     installation_name?: string;
     installation_phone?: string;
@@ -170,6 +171,24 @@ export interface Car {
     comments?: string;
     link_token?: string;
     maker_icon?: string;
+}
+
+export interface UnitExtra {
+    car_number: string;
+    "overspeed-alert"?: {
+        enabled: boolean;
+        updated: Timestamp;
+        value: number;
+    };
+    installation?: {
+        address?: string;
+        app: string;
+        lat?: number;
+        lng?: number;
+    };
+    call_center?: {
+        account_update_timestamp?: Timestamp;
+    };
 }
 
 export interface UsersUnits {
