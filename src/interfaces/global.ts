@@ -189,6 +189,7 @@ export interface UnitExtra {
     call_center?: {
         account_update_timestamp?: Timestamp;
     };
+    protection_certificate_url?: string;
 }
 
 export interface UsersUnits {
