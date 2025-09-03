@@ -46,28 +46,30 @@ export interface NxUser {
 }
 
 export interface MobileAppUser {
-    id: string;
+    id?: string;
     uid: string;
-    app_version: string;
     created: firebase_timestamp;
-    fcm_token: string;
+    updated: firebase_timestamp;
+    is_agreement_signed?: boolean;
+    agreement_signed_datetime?: firebase_timestamp;
+    fcm_token?: string;
+    short_phone_number?: string;
+    long_phone_number?: string;
+    first_name?: string;
+    last_name?: string;
+    email?: string;
+    password?: string;
+    validation_code?: string;
+    validation_token?: string;
+    features?: string[];
+    is_super_user?: boolean;
+    app?: string;
+    disabled_events?: Record<string, Record<string, number[]>>;
+    success?: boolean;
+    app_version: string;
     language: "en" | "ru" | "heb";
     method: "sms" | "email";
     os: "android" | "ios";
-    is_agreement_signed?: boolean;
-    agreement_signed_datetime?: firebase_timestamp;
-    long_phone_number?: string;
-    email?: string;
-    short_phone_number?: string;
-    password?: string;
-    success?: boolean;
-    validation_code?: string;
-    validation_token?: string;
-    disabled_events?: Record<string, Record<string, number[]>>;
-    features?: string[];
-    first_name?: string;
-    last_name?: string;
-    app?: string;
 }
 
 export interface GoUser {
