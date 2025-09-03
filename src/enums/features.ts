@@ -17,6 +17,7 @@ export enum FeaturesClient {
     servision = "servision",
     vibration_level_control = "vibration_level_control",
     vibration_on_off = "vibration_on_off",
+    installation_confirmation_email = "installation_confirmation_email",
 }
 
 export enum FeaturesDashboard {
@@ -35,6 +36,7 @@ export enum FeaturesInstaller {
     desktop_mode = "desktop_mode",
     tests = "tests",
     tools = "tools",
+    access_all_clients = "access_all_clients",
 }
 
 export declare enum FeaturesToolbox {
