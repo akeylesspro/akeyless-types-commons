@@ -70,6 +70,7 @@ export interface MobileAppUser {
     language: "en" | "ru" | "heb";
     method: "sms" | "email";
     os: "android" | "ios";
+    name?: string;
 }
 
 export interface GoUser {
