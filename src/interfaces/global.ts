@@ -3,6 +3,8 @@ import { Timestamp } from "firebase-admin/firestore";
 import { Geo, TObject } from "../types";
 import { Interface } from "readline";
 
+export type TimestampType = firebase_timestamp | Timestamp;
+
 export interface firebase_timestamp {
     _nanoseconds: number;
     _seconds: number;
@@ -81,8 +83,8 @@ export interface GoUser {
 }
 
 export interface Client {
-    created?: firebase_timestamp | Timestamp;
-    updated?: firebase_timestamp | Timestamp;
+    created?: TimestampType;
+    updated?: TimestampType;
     features?: string[];
     id?: string;
     name?: string;
@@ -103,7 +105,7 @@ export interface Board {
     sim: string;
     status: BoardStatus;
     type: string;
-    uploaded: firebase_timestamp | Timestamp;
+    uploaded: TimestampType;
     userId: string;
     token?: string;
     comments?: string;
@@ -118,7 +120,7 @@ export interface Peripheral {
     relayType?: null;
     status?: number;
     technician?: string;
-    updateDate?: firebase_timestamp | Timestamp;
+    updateDate?: TimestampType;
     serialNumber?: string;
     equipmentOptionId?: string;
     equipmentOptionName?: string;
@@ -128,7 +130,7 @@ export interface Peripheral {
 export interface Car {
     confirmation_code: string;
     id?: string;
-    install_confirmation_date: firebase_timestamp | Timestamp;
+    install_confirmation_date: TimestampType;
     carId: string;
     mainDriver: string;
     installation_status: string;
@@ -142,7 +144,7 @@ export interface Car {
     vehicle_markers?: string;
     camera_installation_details: TObject<string>;
     status: UnitStatus;
-    warrantyExpire: firebase_timestamp | Timestamp;
+    warrantyExpire: TimestampType;
     protectionType: string;
     protectionTypeId: string;
     warranty: boolean;
@@ -150,7 +152,7 @@ export interface Car {
     isEnforcementCenterUser: boolean;
     sites: string[];
     client: string;
-    installationDate: firebase_timestamp | Timestamp;
+    installationDate: TimestampType;
     timestamp: number;
     customer: string;
     customerId: string;
@@ -174,6 +176,7 @@ export interface Car {
     comments?: string;
     link_token?: string;
     maker_icon?: string;
+    maintenance_timestamp?: TimestampType;
 }
 
 export interface UnitExtra {
@@ -206,7 +209,7 @@ export interface LastLocationCar {
     car_number: string;
     latitude: number;
     longitude: number;
-    timestamp: firebase_timestamp | Timestamp;
+    timestamp: TimestampType;
     client?: string;
     prev_latitude?: number;
     prev_longitude?: number;
@@ -223,15 +226,15 @@ export interface CarState {
     car_number?: string;
     client?: string;
     engine?: number;
-    engine_updated?: firebase_timestamp | Timestamp;
+    engine_updated?: TimestampType;
     ign?: number;
     is_online?: number;
-    last_offline?: firebase_timestamp | Timestamp;
-    last_online?: firebase_timestamp | Timestamp;
+    last_offline?: TimestampType;
+    last_online?: TimestampType;
     server?: string;
     sites?: string[];
-    update?: firebase_timestamp | Timestamp;
-    updated?: firebase_timestamp | Timestamp;
+    update?: TimestampType;
+    updated?: TimestampType;
     vin?: number;
     disarmed?: number;
     disarm_code?: string;
@@ -250,7 +253,7 @@ export interface CanbusParameter {
     desc?: string | null;
     id: number | string;
     value: number;
-    timestamp?: firebase_timestamp | Timestamp;
+    timestamp?: TimestampType;
 }
 
 export interface Equipment {
@@ -289,7 +292,7 @@ export interface EventFromDevice {
     event_id: number;
     car_number: string;
     source: string;
-    timestamp: firebase_timestamp | Timestamp;
+    timestamp: TimestampType;
     spd: number;
     vin: number;
     latitude: number;
