@@ -36,6 +36,7 @@ export interface NxUser {
     clients?: string[];
     first_name?: string;
     last_name?: string;
+    full_name?: string;
     phone_number?: string;
     email?: string;
     status?: string;
