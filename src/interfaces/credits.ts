@@ -6,19 +6,22 @@ export interface CreditItem {
     id: string;
     amount: string;
     car_number: string;
-    created: TimestampType;
     expiration: {
         from: TimestampType;
         to: TimestampType;
     };
     types: CreditType[];
+    created: TimestampType;
+    updated: TimestampType;
+    is_active: boolean;
 }
 
-export type CreditAuditAction = "subtract" | "add";
+export type CreditAuditAction = "subtract" | "add" | "delete";
 
 export interface CreditAuditItem {
     id: string;
     action: CreditAuditAction;
+    car_number: string;
     amount: string;
     comment?: string;
     reason: string;
@@ -26,4 +29,5 @@ export interface CreditAuditItem {
     timestamp: TimestampType;
     user_id: string;
     user_name: string;
+    credit_id: string;
 }

@@ -51,6 +51,7 @@ export declare enum FeaturesToolbox {
     manage_clients = "manage_clients",
     manage_users = "manage_users",
     manage_cars = "manage_cars",
+    manage_credits = "manage_credits",
     call_center_user = "call_center_user",
 }
 
