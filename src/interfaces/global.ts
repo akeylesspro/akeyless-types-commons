@@ -178,6 +178,10 @@ export interface Car {
     link_token?: string;
     maker_icon?: string;
     maintenance_timestamp?: TimestampType;
+    protection_description?: {
+        sku: string;
+        description: string;
+    };
 }
 
 export interface UnitExtra {
