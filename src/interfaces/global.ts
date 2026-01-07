@@ -353,3 +353,15 @@ export interface ReportMeta {
 }
 
 export type ReportDataRow = (string | number | Date | boolean | null)[];
+
+export interface GprsItem {
+    id: string;
+    created: TimestampType;
+    updated: TimestampType;
+    external_id: number;
+    recipient: string; // car number
+    response: string;
+    content: string;
+    details: TObject<any>;
+    status: "new" | "delivered" | "failed" | "delivered" | "responded";
+}
