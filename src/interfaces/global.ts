@@ -363,5 +363,5 @@ export interface GprsItem {
     response: string;
     content: string;
     details: TObject<any>;
-    status: "new" | "delivered" | "failed" | "delivered" | "responded";
+    status: "new" | "failed" | "delivered" | "responded";
 }
