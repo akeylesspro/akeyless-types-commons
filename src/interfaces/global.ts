@@ -98,6 +98,8 @@ export interface Client {
     installation_name?: string;
     installation_phone?: string;
     installation_root_site?: string;
+    geo?: Geo;
+    country?: "IL" | "TH" | "US" | (string & {});
 }
 
 export interface Board {
