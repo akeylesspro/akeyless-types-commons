@@ -53,6 +53,7 @@ export declare enum FeaturesToolbox {
     manage_cars = "manage_cars",
     manage_credits = "manage_credits",
     call_center_user = "call_center_user",
+    clients_scope = "clients_scope",
 }
 
 export interface UserPermissionsObject {
