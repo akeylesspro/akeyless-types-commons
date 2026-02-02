@@ -1,4 +1,4 @@
-import { BoardStatus, ClientStatus, EquipmentStatus, EquipmentStatusReason, LanguageOptions, SiteType, UnitStatus } from "../enums";
+import { BoardStatus, ClientStatus, CountryOptions, EquipmentStatus, EquipmentStatusReason, LanguageOptions, SiteType, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
 import { Geo, TObject } from "../types";
 import { Interface } from "readline";
@@ -99,7 +99,7 @@ export interface Client {
     installation_phone?: string;
     installation_root_site?: string;
     geo?: Geo;
-    country?: "IL" | "TH" | "US" | (string & {});
+    country?: CountryOptions;
 }
 
 export interface Board {
