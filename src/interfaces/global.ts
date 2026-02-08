@@ -94,12 +94,12 @@ export interface Client {
     api_token?: string;
     key?: string;
     email?: string;
-    language?: LanguageOptions;
+    language: LanguageOptions;
+    country: CountryOptions;
     installation_name?: string;
     installation_phone?: string;
     installation_root_site?: string;
     geo?: Geo;
-    country?: CountryOptions;
 }
 
 export interface Board {
