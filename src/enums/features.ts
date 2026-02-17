@@ -18,6 +18,7 @@ export enum FeaturesClient {
     vibration_level_control = "vibration_level_control",
     vibration_on_off = "vibration_on_off",
     installation_confirmation_email = "installation_confirmation_email",
+    auto_connect_to_call_center = "auto_connect_to_call_center",
 }
 
 export enum FeaturesDashboard {

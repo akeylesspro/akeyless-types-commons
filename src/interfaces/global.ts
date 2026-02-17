@@ -99,6 +99,7 @@ export interface Client {
     installation_name?: string;
     installation_phone?: string;
     installation_root_site?: string;
+    connect_to_call_center_after_days?: number;
     geo?: Geo;
 }
 
