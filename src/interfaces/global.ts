@@ -1,4 +1,4 @@
-import { BoardStatus, ClientStatus, EquipmentStatus, EquipmentStatusReason, LanguageOptions, SiteType, UnitStatus } from "../enums";
+import { BoardStatus, ClientStatus, CountryOptions, EquipmentStatus, EquipmentStatusReason, LanguageOptions, SiteType, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
 import { Geo, TObject } from "../types";
 import { Interface } from "readline";
@@ -94,10 +94,13 @@ export interface Client {
     api_token?: string;
     key?: string;
     email?: string;
-    language?: LanguageOptions;
+    language: LanguageOptions;
+    country: CountryOptions;
     installation_name?: string;
     installation_phone?: string;
     installation_root_site?: string;
+    connect_to_call_center_after_days?: number;
+    geo?: Geo;
 }
 
 export interface Board {
@@ -363,5 +366,5 @@ export interface GprsItem {
     response: string;
     content: string;
     details: TObject<any>;
-    status: "new" | "delivered" | "failed" | "responded";
+    status: "new" | "failed" | "delivered" | "responded";
 }

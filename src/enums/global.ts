@@ -40,10 +40,12 @@ export enum LanguageOptions {
     He = "he",
     En = "en",
     Ru = "ru",
+    Th = "th",
 }
 export enum CountryOptions {
     US = "us",
     IL = "il",
+    TH = "th",
 }
 
 export enum SiteType {
