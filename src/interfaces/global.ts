@@ -188,7 +188,7 @@ export interface Car {
 }
 
 export interface UnitExtra {
-    id:string
+    id: string;
     car_number: string;
     "overspeed-alert"?: {
         enabled: boolean;
@@ -257,6 +257,7 @@ export interface CarState {
     charge_percents?: number;
     is_charging?: number;
     cut?: number;
+    plug_in?: boolean;
 }
 
 export interface CanbusParameter {
