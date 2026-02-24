@@ -204,6 +204,7 @@ export interface UnitExtra {
         account_update_timestamp?: Timestamp;
     };
     protection_certificate_url?: string;
+    virtual_odometer?: number;
 }
 
 export interface UsersUnits {
