@@ -188,6 +188,7 @@ export interface Car {
 }
 
 export interface UnitExtra {
+    id:string
     car_number: string;
     "overspeed-alert"?: {
         enabled: boolean;
