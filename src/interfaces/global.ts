@@ -238,6 +238,7 @@ export interface CarState {
     engine?: number;
     engine_updated?: TimestampType;
     ign?: number;
+    odo?: number;
     is_online?: number;
     last_offline?: TimestampType;
     last_online?: TimestampType;
