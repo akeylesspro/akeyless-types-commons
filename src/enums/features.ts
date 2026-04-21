@@ -56,6 +56,7 @@ export declare enum FeaturesToolbox {
     call_center_user = "call_center_user",
     clients_scope = "clients_scope",
     protection_types_cars = "protection_types_cars",
+    fixed_trips = "fixed_trips"
 }
 
 export interface UserPermissionsObject {

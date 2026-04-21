@@ -234,6 +234,7 @@ export interface LastLocationCar {
 }
 
 export interface CarState {
+    id?: string;
     car_number?: string;
     client?: string;
     engine?: number;
