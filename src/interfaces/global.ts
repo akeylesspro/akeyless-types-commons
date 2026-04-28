@@ -113,6 +113,7 @@ export interface Board {
     userId: string;
     token?: string;
     comments?: string;
+    dependencies?: { name: string; value: string }[];
 }
 export interface Peripheral {
     boardRef?: string;
