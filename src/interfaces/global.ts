@@ -207,7 +207,12 @@ export interface UnitExtra {
     };
     protection_certificate_url?: string;
     virtual_odometer?: number;
-    virtual_odometer_updated?: Timestamp;
+    virtual_odometer_updated?: TimestampType;
+    payment?: {
+        timestamp: TimestampType;
+        user_id: string;
+        user_name: string;
+    };
 }
 
 export interface UsersUnits {
