@@ -208,6 +208,7 @@ export interface UnitExtra {
     protection_certificate_url?: string;
     virtual_odometer?: number;
     virtual_odometer_updated?: TimestampType;
+    update?: TimestampType;
     payment?: {
         timestamp: TimestampType;
         user_id: string;
