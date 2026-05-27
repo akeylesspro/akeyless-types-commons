@@ -188,6 +188,13 @@ export interface Car {
     };
 }
 
+export interface UnitExtraPaymentDetails {
+    user: {
+        id: string;
+        name: string;
+    };
+    timestamp: TimestampType;
+}
 export interface UnitExtra {
     id: string;
     car_number: string;
@@ -210,9 +217,8 @@ export interface UnitExtra {
     virtual_odometer_updated?: TimestampType;
     update?: TimestampType;
     payment?: {
-        timestamp: TimestampType;
-        user_id: string;
-        user_name: string;
+        details_collected?: UnitExtraPaymentDetails;
+        paid?: UnitExtraPaymentDetails;
     };
 }
 
