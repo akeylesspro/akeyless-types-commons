@@ -98,6 +98,8 @@ export interface Client {
     country: CountryOptions;
     installation_name?: string;
     installation_phone?: string;
+    installation_year?: string;
+    installation_engine_type ?: string;
     installation_root_site?: string;
     connect_to_call_center_after_days?: number;
     geo?: Geo;
