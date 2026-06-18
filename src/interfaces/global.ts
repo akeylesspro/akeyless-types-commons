@@ -99,7 +99,7 @@ export interface Client {
     installation_name?: string;
     installation_phone?: string;
     installation_year?: string;
-    installation_engine_type ?: string;
+    installation_engine_type?: string;
     installation_root_site?: string;
     connect_to_call_center_after_days?: number;
     geo?: Geo;
@@ -134,13 +134,21 @@ export interface Peripheral {
     type?: string;
 }
 
+export enum InstallationStatusEnum {
+    created = "created",
+    finish = "finish",
+    sim_activate = "sim_activate",
+}
+
+export type InstallationStatus = `${InstallationStatusEnum}`
+
 export interface Car {
     confirmation_code: string;
     id?: string;
     install_confirmation_date: TimestampType;
     carId: string;
     mainDriver: string;
-    installation_status: string;
+    installation_status: InstallationStatus;
     name: string;
     userPhone: string;
     userEmail?: string;
