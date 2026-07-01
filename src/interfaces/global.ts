@@ -140,7 +140,7 @@ export enum InstallationStatusEnum {
     sim_activate = "sim_activate",
 }
 
-export type InstallationStatus = `${InstallationStatusEnum}`
+export type InstallationStatus = `${InstallationStatusEnum}`;
 
 export interface Car {
     confirmation_code: string;
@@ -284,6 +284,7 @@ export interface CarState {
     is_charging?: number;
     cut?: number;
     plug_in?: boolean;
+    is_byd_security_enabled?: number;
 }
 
 export interface CanbusParameter {
