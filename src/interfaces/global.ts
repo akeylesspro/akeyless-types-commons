@@ -285,6 +285,13 @@ export interface CarState {
     cut?: number;
     plug_in?: boolean;
     is_byd_security_enabled?: number;
+    device_extra?: {
+        if_cut_off_fuel: number;
+        is_defense: number;
+        is_ignition: number;
+        is_internal_battery_charging: number;
+        is_position_fixed: string;
+    };
 }
 
 export interface CanbusParameter {
