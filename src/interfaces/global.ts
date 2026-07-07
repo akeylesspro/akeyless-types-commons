@@ -275,6 +275,7 @@ export interface CarState {
     disarmed?: number;
     disarm_code?: string;
     evacuator?: number;
+    garage?: number;
     is_ce?: number;
     is_ab?: number;
     is_abs?: number;
