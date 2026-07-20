@@ -374,3 +374,29 @@ export interface GprsItem {
     details: TObject<any>;
     status: "new" | "failed" | "delivered" | "responded";
 }
+
+export interface NxPolygon {
+    address: string;
+    cars?: Array<string>;
+    cars_inside?: Array<string>;
+    center_lat: string | number | null;
+    center_lng: string | number | null;
+    client: string;
+    code?: string;
+    created: firebase_timestamp;
+    email_contact?: Array<string>;
+    exit_alert?: boolean;
+    id: string;
+    is_default: boolean;
+    is_scheduler_active?: boolean;
+    name: string;
+    path: Array<Geo>;
+    radius: string | number | null;
+    schedule?: Array<string>;
+    shape: string;
+    site: string;
+    sites?: Array<string>;
+    start_location: Geo;
+    status: string;
+    updated: firebase_timestamp;
+}
