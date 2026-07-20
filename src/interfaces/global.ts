@@ -98,6 +98,8 @@ export interface Client {
     country: CountryOptions;
     installation_name?: string;
     installation_phone?: string;
+    installation_year?: string;
+    installation_engine_type?: string;
     installation_root_site?: string;
     connect_to_call_center_after_days?: number;
     geo?: Geo;
@@ -113,6 +115,7 @@ export interface Board {
     userId: string;
     token?: string;
     comments?: string;
+    dependencies?: { name: string; value: string }[];
 }
 export interface Peripheral {
     boardRef?: string;
@@ -131,13 +134,21 @@ export interface Peripheral {
     type?: string;
 }
 
+export enum InstallationStatusEnum {
+    created = "created",
+    finish = "finish",
+    sim_activate = "sim_activate",
+}
+
+export type InstallationStatus = `${InstallationStatusEnum}`;
+
 export interface Car {
     confirmation_code: string;
     id?: string;
     install_confirmation_date: TimestampType;
     carId: string;
     mainDriver: string;
-    installation_status: string;
+    installation_status: InstallationStatus;
     name: string;
     userPhone: string;
     userEmail?: string;
@@ -187,6 +198,13 @@ export interface Car {
     };
 }
 
+export interface UnitExtraPaymentDetails {
+    user: {
+        id: string;
+        name: string;
+    };
+    timestamp: TimestampType;
+}
 export interface UnitExtra {
     id: string;
     car_number: string;
@@ -200,13 +218,19 @@ export interface UnitExtra {
         app: string;
         lat?: number;
         lng?: number;
+        client_features?: string[];
     };
     call_center?: {
         account_update_timestamp?: Timestamp;
     };
     protection_certificate_url?: string;
     virtual_odometer?: number;
-    virtual_odometer_updated?: Timestamp;
+    virtual_odometer_updated?: TimestampType;
+    update?: TimestampType;
+    payment?: {
+        details_collected?: UnitExtraPaymentDetails;
+        paid?: UnitExtraPaymentDetails;
+    };
 }
 
 export interface UsersUnits {
@@ -252,6 +276,7 @@ export interface CarState {
     disarmed?: number;
     disarm_code?: string;
     evacuator?: number;
+    garage?: number;
     is_ce?: number;
     is_ab?: number;
     is_abs?: number;
@@ -261,6 +286,14 @@ export interface CarState {
     is_charging?: number;
     cut?: number;
     plug_in?: boolean;
+    is_byd_security_enabled?: number;
+    device_extra?: {
+        if_cut_off_fuel?: number;
+        is_defense?: number;
+        is_ignition?: number;
+        is_internal_battery_charging?: number;
+        is_position_fixed?: string;
+    };
 }
 
 export interface CanbusParameter {

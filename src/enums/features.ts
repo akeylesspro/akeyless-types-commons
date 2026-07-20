@@ -57,6 +57,7 @@ export declare enum FeaturesToolbox {
     clients_scope = "clients_scope",
     protection_types_cars = "protection_types_cars",
     fixed_trips = "fixed_trips",
+    manage_subscriptions = "manage_subscriptions",
 }
 
 export interface UserPermissionsObject {
