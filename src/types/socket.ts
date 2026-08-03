@@ -23,6 +23,7 @@ export interface RedisUpdatePayload<UpdateType extends RedisUpdateType, DataType
     update_type: UpdateType;
     data: DataType;
     update_time: number;
+    expires_at?: number;
 }
 
 export interface SocketCallbackResponse {
@@ -37,4 +38,10 @@ export interface CollectionConfig {
     key?: string;
     sync_direction?: "firebase_to_redis" | "redis_to_firebase";
     sync_period?: number;
+    is_big_collection?: boolean;
+}
+
+export interface SubscribeCollectionsOptions {
+    parallel?: boolean;
+    priority?: string[][];
 }

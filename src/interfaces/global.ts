@@ -1,8 +1,6 @@
 import { BoardStatus, ClientStatus, CountryOptions, EquipmentStatus, EquipmentStatusReason, LanguageOptions, SiteType, UnitStatus } from "../enums";
 import { Timestamp } from "firebase-admin/firestore";
 import { Geo, TObject } from "../types";
-import { Interface } from "readline";
-
 export type TimestampType = firebase_timestamp | Timestamp;
 
 export interface firebase_timestamp {
@@ -155,6 +153,11 @@ export interface Car {
     userAddress?: string;
     userIdCard?: string;
     userResidence?: string;
+    additional_client_data?: {
+        user_card_id?: string;
+        worker_number?: string;
+        department?: string;
+    };
     parking_place?: string;
     vehicle_markers?: string;
     camera_installation_details: TObject<string>;
@@ -198,12 +201,27 @@ export interface Car {
     };
 }
 
-export interface UnitExtraPaymentDetails {
+interface UnitExtraPaymentDetails {
     user: {
         id: string;
         name: string;
     };
     timestamp: TimestampType;
+}
+interface UnitExtraInstallation {
+    app: string;
+    created_by: {
+        name: string;
+        id: string;
+    };
+    confirmed_by?: {
+        name: string;
+        id: string;
+    };
+    lat?: number;
+    lng?: number;
+    address?: string;
+    client_features?: string[];
 }
 export interface UnitExtra {
     id: string;
@@ -213,13 +231,7 @@ export interface UnitExtra {
         updated: Timestamp;
         value: number;
     };
-    installation?: {
-        address?: string;
-        app: string;
-        lat?: number;
-        lng?: number;
-        client_features?: string[];
-    };
+    installation?: UnitExtraInstallation;
     call_center?: {
         account_update_timestamp?: Timestamp;
     };
