@@ -154,7 +154,7 @@ export interface Car {
     userIdCard?: string;
     userResidence?: string;
     additional_client_data?: {
-        user_card_id?: string;
+        user_id_card?: string;
         worker_number?: string;
         department?: string;
     };
