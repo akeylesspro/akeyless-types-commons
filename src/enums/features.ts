@@ -38,6 +38,7 @@ export enum FeaturesInstaller {
     tests = "tests",
     tools = "tools",
     access_all_clients = "access_all_clients",
+    select_technician = "select_technician",
 }
 
 export declare enum FeaturesToolbox {
