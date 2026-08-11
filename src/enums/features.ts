@@ -19,6 +19,8 @@ export enum FeaturesClient {
     vibration_on_off = "vibration_on_off",
     installation_confirmation_email = "installation_confirmation_email",
     auto_connect_to_call_center = "auto_connect_to_call_center",
+    hide_locations_and_trips = "hide_locations_and_trips",
+    hide_car_problems_display = "hide_cars_problems_display",
 }
 
 export enum FeaturesDashboard {
