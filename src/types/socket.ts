@@ -5,6 +5,7 @@ export const SOCKET_EVENTS = {
     GET_DATA: "get_data",
     DELETE_DATA: "delete_data",
     SUBSCRIBE_COLLECTIONS: "subscribe_collections",
+    SUBSCRIBE_OPTIONS: "subscribe_options",
     UNSUBSCRIBE_COLLECTIONS: "unsubscribe_collections",
     CLEAR_ALL_REDIS_DATA: "clear_all_redis_data",
     DISCONNECT: "disconnect",
