@@ -1,3 +1,5 @@
+import { WhereFilterOp } from "firebase-admin/firestore";
+
 export const REDIS_UPDATES_PREFIX = "redis_updates";
 
 export const SOCKET_EVENTS = {
@@ -42,7 +44,18 @@ export interface CollectionConfig {
     is_big_collection?: boolean;
 }
 
+export interface WhereCondition {
+    field_name: string;
+    operator: WhereFilterOp;
+    value: any;
+}
+
 export interface SubscribeCollectionsOptions {
     parallel?: boolean;
     priority?: string[][];
+    /// conditions per collection name. the data-socket narrows both the initial frame and every
+    /// later update to the documents that match, and reports entering/leaving the result set as
+    /// add/remove, the way a firestore query snapshot does
+    /// this not reflected to the client, so client cannot use it for filtering its used by socket manager in client commons only
+    conditions?: Record<string, WhereCondition[]>;
 }
