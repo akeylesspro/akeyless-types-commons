@@ -34,14 +34,11 @@ export interface SendDeviceCommandBody {
     messages?: DeviceCommandOption[];
     label_key?: string;
     request_id?: string;
+    wait_for_response?: boolean;
 }
 
 export interface SendDeviceCommandResponse {
     request_id: string;
-    recipient: string;
-    command_key: string;
-    command_type: DeviceCommandType;
-    sent: number;
 }
 
 export type DeviceCommandStatus = "done" | "in_progress" | "failed" | "responded";
