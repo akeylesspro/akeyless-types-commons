@@ -38,7 +38,7 @@ export interface SendDeviceCommandBody {
 }
 
 export interface SendDeviceCommandResponse {
-    command_id: string;
+    request_id: string;
 }
 
 export type DeviceCommandStatus = "done" | "in_progress" | "failed" | "responded";
