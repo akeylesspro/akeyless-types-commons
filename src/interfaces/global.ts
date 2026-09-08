@@ -445,3 +445,24 @@ export interface NxPolygon {
     status: string;
     updated: firebase_timestamp;
 }
+
+export interface InstallationTrackingItem {
+    id: string;
+    car_number: string;
+    driver_name: string;
+    driver_phone: string;
+    driver_id_card: string;
+    client_name: string;
+    installation_date: firebase_timestamp | Timestamp;
+    site_name: string;
+    protection_type: string;
+    comments: string;
+    status: "new" | "in_progress" | "done" | "problem";
+    user: {
+        name: string;
+        id: string;
+    };
+    done_by_reason?: "success" | "failed_to_expensive" | "failed_not_interested";
+    created: TimestampType;
+    updated: TimestampType;
+}
