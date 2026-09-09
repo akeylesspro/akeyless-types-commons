@@ -306,6 +306,8 @@ export interface CarState {
         is_internal_battery_charging?: number;
         is_position_fixed?: string;
     };
+    canbus_status?: number;
+    canbus_errors?: number;
 }
 
 export interface CanbusParameter {
@@ -446,7 +448,7 @@ export interface NxPolygon {
     updated: firebase_timestamp;
 }
 
-export interface InstallationTrackingItem {
+export interface PostInstallationLead {
     id: string;
     car_number: string;
     driver_name: string;

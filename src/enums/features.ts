@@ -61,6 +61,7 @@ export declare enum FeaturesToolbox {
     protection_types_cars = "protection_types_cars",
     fixed_trips = "fixed_trips",
     manage_subscriptions = "manage_subscriptions",
+    manage_post_installation_leads = "manage_post_installation_leads",
 }
 
 export interface UserPermissionsObject {
