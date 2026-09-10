@@ -62,6 +62,7 @@ export declare enum FeaturesToolbox {
     fixed_trips = "fixed_trips",
     manage_subscriptions = "manage_subscriptions",
     manage_post_installation_leads = "manage_post_installation_leads",
+    manage_post_installation_leads_admin = "manage_post_installation_leads_admin",
 }
 
 export interface UserPermissionsObject {

@@ -459,7 +459,7 @@ export interface PostInstallationLead {
     site_name: string;
     protection_type: string;
     comments: string;
-    status: "new" | "in_progress" | "done" | "problem";
+    status: "new" | "pending_handling" | "in_progress" | "done" | "problem";
     user: {
         name: string;
         id: string;
@@ -467,4 +467,5 @@ export interface PostInstallationLead {
     done_by_reason?: "success" | "failed_to_expensive" | "failed_not_interested";
     created: TimestampType;
     updated: TimestampType;
+    is_have_backup?: boolean;
 }
