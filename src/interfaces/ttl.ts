@@ -9,6 +9,10 @@ export interface Subscription {
     phone_number: string;
     email?: string;
     id_card: string;
+    address: string;
+    with_call_center: boolean;
+    residence_type: string;
+    parking_type: string;
     credit_card: {
         number: string;
         type: string;
