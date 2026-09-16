@@ -464,7 +464,7 @@ export interface PostInstallationLead {
         name: string;
         id: string;
     };
-    done_by_reason?: "success" | "failed_to_expensive" | "failed_not_interested";
+    done_by_reason?: "success" | "failed_too_expensive" | "failed_not_interested";
     created: TimestampType;
     updated: TimestampType;
     is_have_backup?: boolean;
