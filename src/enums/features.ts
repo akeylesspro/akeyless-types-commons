@@ -63,6 +63,8 @@ export declare enum FeaturesToolbox {
     manage_subscriptions = "manage_subscriptions",
     manage_post_installation_leads = "manage_post_installation_leads",
     manage_post_installation_leads_admin = "manage_post_installation_leads_admin",
+    knowledgebase_admin = "knowledgebase_admin",
+    knowledgebase_protection_types_admin = "knowledgebase_protection_types_admin",
 }
 
 export interface UserPermissionsObject {
