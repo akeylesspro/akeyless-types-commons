@@ -65,6 +65,8 @@ export declare enum FeaturesToolbox {
     manage_post_installation_leads_admin = "manage_post_installation_leads_admin",
     knowledgebase_admin = "knowledgebase_admin",
     knowledgebase_protection_types_admin = "knowledgebase_protection_types_admin",
+    manage_ev_installation_requests = "manage_ev_installation_requests",
+    manage_ev_installation_requests_admin = "manage_ev_installation_requests_admin",
 }
 
 export interface UserPermissionsObject {

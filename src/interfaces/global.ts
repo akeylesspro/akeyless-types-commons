@@ -469,3 +469,40 @@ export interface PostInstallationLead {
     updated: TimestampType;
     is_have_backup?: boolean;
 }
+
+export type EvInstallationRequestStatus = "new" | "in_progress" | "done";
+
+export type EvInstallationRequestRejectReason = "duplicate_in_order" | "open_request_exists" | "already_installed" | "invalid_address";
+
+export interface EvInstallationRequestCarInput {
+    car_number: string;
+    driver_name: string;
+    driver_phone: string;
+    driver_id_card: string;
+    address: string;
+    kwh_cost: number;
+    manufacturer: string;
+    model: string;
+    car_year: string;
+    site_id: string;
+}
+
+export interface EvInstallationRequest extends EvInstallationRequestCarInput {
+    id?: string;
+    order_id: number;
+    client_id: string;
+    site_name: string;
+    lat: number;
+    lng: number;
+    status: EvInstallationRequestStatus;
+    created_by: { id: string; name: string };
+    user: { id?: string; name?: string };
+    created: TimestampType;
+    updated: TimestampType;
+}
+
+export interface EvInstallationRequestsCreateResponse {
+    order_id: number | null;
+    created: { id: string; car_number: string }[];
+    rejected: { car_number: string; reason: EvInstallationRequestRejectReason }[];
+}
