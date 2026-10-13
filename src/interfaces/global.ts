@@ -497,8 +497,17 @@ export interface EvInstallationRequest extends EvInstallationRequestCarInput {
     status: EvInstallationRequestStatus;
     created_by: { id: string; name: string };
     user: { id?: string; name?: string };
+    hardware?: string;
     created: TimestampType;
     updated: TimestampType;
+}
+
+export interface EvCanbusSupportedModel {
+    id?: string;
+    brand: string;
+    model: string;
+    hardware: string[];
+    created?: TimestampType;
 }
 
 export interface EvInstallationRequestsCreateResponse {
