@@ -177,7 +177,7 @@ export interface Car {
     technician: string;
     technicianId: string;
     engine_type: string;
-    gov_info: TObject<string | number>;
+    gov_info: TObject<string | number | boolean>;
     brand: string;
     manufacturer: string;
     carYear: string;
