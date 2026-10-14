@@ -67,6 +67,7 @@ export declare enum FeaturesToolbox {
     knowledgebase_protection_types_admin = "knowledgebase_protection_types_admin",
     manage_ev_installation_requests = "manage_ev_installation_requests",
     manage_ev_installation_requests_admin = "manage_ev_installation_requests_admin",
+    manage_ev_canbus_supported_models = "manage_ev_canbus_supported_models",
 }
 
 export interface UserPermissionsObject {

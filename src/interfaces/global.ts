@@ -474,6 +474,8 @@ export type EvInstallationRequestStatus = "new" | "in_progress" | "done";
 
 export type EvInstallationRequestRejectReason = "duplicate_in_order" | "open_request_exists" | "already_installed" | "invalid_address";
 
+export type EvInstallationEngineType = "EVs" | "HEVs";
+
 export interface EvInstallationRequestCarInput {
     car_number: string;
     driver_name: string;
@@ -484,6 +486,8 @@ export interface EvInstallationRequestCarInput {
     manufacturer: string;
     model: string;
     car_year: string;
+    engine_type: EvInstallationEngineType;
+    color: string;
     site_id: string;
 }
 
@@ -498,6 +502,7 @@ export interface EvInstallationRequest extends EvInstallationRequestCarInput {
     created_by: { id: string; name: string };
     user: { id?: string; name?: string };
     hardware?: string;
+    gov_info: TObject<string | number | boolean>;
     created: TimestampType;
     updated: TimestampType;
 }
@@ -508,10 +513,18 @@ export interface EvCanbusSupportedModel {
     model: string;
     hardware: string[];
     created?: TimestampType;
+    updated?: TimestampType;
 }
 
 export interface EvInstallationRequestsCreateResponse {
     order_id: number | null;
     created: { id: string; car_number: string }[];
     rejected: { car_number: string; reason: EvInstallationRequestRejectReason }[];
+}
+
+export interface CarGovInfoLookupResponse {
+    gov_info: TObject<string | number>;
+    brand: string | null;
+    model: string | null;
+    engine_type: string | null;
 }

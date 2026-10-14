@@ -1,4 +1,5 @@
-import type { Client, EvInstallationRequestStatus, Site } from "../interfaces";
+import type { Client, EvInstallationEngineType, EvInstallationRequestCarInput, EvInstallationRequestStatus, Site } from "../interfaces";
+import type { BoardMaker } from "./global";
 
 type EvSiteNode = Pick<Site, "id" | "sites" | "type">;
 
@@ -6,7 +7,30 @@ export const EV_INSTALLATION_REQUESTS_COLLECTION = "nx-ev-installation-requests"
 
 export const EV_CANBUS_SUPPORTED_MODELS_COLLECTION = "nx-ev-canbus-supported-models";
 
+const EV_CANBUS_BOARD_MAKERS: BoardMaker[] = ["erm", "jimi", "jimi_iothub", "ruptela", "servision"];
+
+export const EV_CANBUS_HARDWARE_OPTIONS: string[] = EV_CANBUS_BOARD_MAKERS.map((maker) => maker.toUpperCase());
+
 export const EV_INSTALLATION_REQUEST_OPEN_STATUSES: EvInstallationRequestStatus[] = ["new", "in_progress"];
+
+export const EV_INSTALLATION_ENGINE_TYPES: EvInstallationEngineType[] = ["EVs", "HEVs"];
+
+const EV_INSTALLATION_FUEL_TYPE_NAMES: Record<EvInstallationEngineType, string> = { EVs: "חשמל", HEVs: "חשמל/בנזין" };
+
+export const isEvInstallationEngineType = (value: unknown): value is EvInstallationEngineType =>
+    EV_INSTALLATION_ENGINE_TYPES.includes(value as EvInstallationEngineType);
+
+export const buildEvInstallationManualGovInfo = (
+    car: Pick<EvInstallationRequestCarInput, "manufacturer" | "model" | "car_year" | "color" | "engine_type">
+): Record<string, string | boolean> => ({
+    is_manually_filled: true,
+    engine_type: car.engine_type,
+    sug_delek_nm: EV_INSTALLATION_FUEL_TYPE_NAMES[car.engine_type],
+    tozeret_nm: car.manufacturer,
+    kinuy_mishari: car.model,
+    shnat_yitzur: car.car_year,
+    tzeva_rechev: car.color,
+});
 
 export const EV_INSTALLATION_REQUEST_MAX_CARS = 200;
 
