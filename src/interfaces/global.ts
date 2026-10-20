@@ -502,6 +502,8 @@ export interface EvInstallationRequest extends EvInstallationRequestCarInput {
     created_by: { id: string; name: string };
     user: { id?: string; name?: string };
     hardware?: string;
+    installation_date?: TimestampType | null;
+    installation_address?: string;
     gov_info: TObject<string | number | boolean>;
     created: TimestampType;
     updated: TimestampType;
