@@ -1,4 +1,11 @@
-import type { Client, EvInstallationEngineType, EvInstallationRequestCarInput, EvInstallationRequestStatus, Site } from "../interfaces";
+import type {
+    Client,
+    EvCanbusSupportedModel,
+    EvInstallationEngineType,
+    EvInstallationRequestCarInput,
+    EvInstallationRequestStatus,
+    Site,
+} from "../interfaces";
 import type { BoardMaker } from "./global";
 
 type EvSiteNode = Pick<Site, "id" | "sites" | "type">;
@@ -53,7 +60,22 @@ export const getEvSupportedModelKey = (brand: string, model: string): string => 
     return JSON.stringify([clean(brand), clean(model)]);
 };
 
-export const isValidIsraeliIdOrCompanyNumber = (value: string): boolean => {
+export const getEvSupportedHardwareByModel = (models: EvCanbusSupportedModel[]): Map<string, string[]> => {
+    const hardwareByModel = new Map<string, string[]>();
+    models.forEach((model) => {
+        const key = getEvSupportedModelKey(model.brand, model.model);
+        const hardware = Array.isArray(model.hardware)
+            ? model.hardware.filter((value): value is string => typeof value === "string").map((value) => value.trim()).filter(Boolean)
+            : [];
+        hardwareByModel.set(key, [...new Set([...(hardwareByModel.get(key) || []), ...hardware])].sort());
+    });
+    return hardwareByModel;
+};
+
+export const isValidEvInstallationHardware = (hardware: string, supportedHardware: string[], currentHardware?: string): boolean =>
+    !!hardware && (hardware === currentHardware || supportedHardware.includes(hardware));
+
+export const isValidIsraeliIdOrCompanyNumber =(value: string): boolean => {
     const digits = value.trim().padStart(9, "0");
     if (!/^[0-9]{9}$/.test(digits) || Number(digits) === 0) {
         return false;
