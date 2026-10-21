@@ -504,10 +504,31 @@ export interface EvInstallationRequest extends EvInstallationRequestCarInput {
     hardware?: string;
     installation_date?: TimestampType | null;
     installation_address?: string;
+    installation_email?: EvInstallationScheduledEmail;
     gov_info: TObject<string | number | boolean>;
     created: TimestampType;
     updated: TimestampType;
 }
+
+export interface EvInstallationScheduledEmail {
+    sent_at: TimestampType | null;
+    hardware: string;
+}
+
+export type EvInstallationScheduleRejectReason = "not_found" | "done" | "hardware_required" | "invalid_hardware";
+
+export type EvInstallationScheduleEmailResult = "sent" | "failed" | "not_needed";
+
+export interface EvInstallationRequestScheduleBody {
+    request_id: string;
+    installation_date: number | null;
+    installation_address: string;
+    hardware?: string;
+}
+
+export type EvInstallationRequestScheduleResponse =
+    | { rejected: EvInstallationScheduleRejectReason }
+    | { rejected: null; email: EvInstallationScheduleEmailResult };
 
 export interface EvCanbusSupportedModel {
     id?: string;
