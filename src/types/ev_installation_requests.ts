@@ -18,6 +18,10 @@ const EV_CANBUS_BOARD_MAKERS: BoardMaker[] = ["erm", "jimi", "jimi_iothub", "rup
 
 export const EV_CANBUS_HARDWARE_OPTIONS: string[] = EV_CANBUS_BOARD_MAKERS.map((maker) => maker.toUpperCase());
 
+const EV_CANBUS_HARDWARE_LABELS: Record<string, string> = { ERM: "ERM FD" };
+
+export const getEvCanbusHardwareLabel = (hardware: string): string => EV_CANBUS_HARDWARE_LABELS[hardware] || hardware;
+
 export const EV_INSTALLATION_REQUEST_OPEN_STATUSES: EvInstallationRequestStatus[] = ["new", "in_progress"];
 
 export const EV_INSTALLATION_ENGINE_TYPES: EvInstallationEngineType[] = ["EVs", "HEVs"];
